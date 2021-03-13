@@ -5,7 +5,7 @@ import * as CdkPipeline from '../lib/cdk_pipeline-stack';
 test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
-    const stack = new CdkPipeline.CdkPipelineStack(app, 'MyTestStack');
+    const stack = new CdkPipeline.AwsdevhourBackendPipelineStack(app, 'MyTestStack');
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}
