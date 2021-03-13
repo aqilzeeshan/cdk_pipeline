@@ -1,0 +1,706 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdkPipelineStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkPipelineStack.assets.json",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkPipelineStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CdkPipelineStack.template.json",
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/090b510502ea8f62add3817652efac0286d918c578cc05ab48eadaa793207a43",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkPipelineStack.assets"
+        ]
+      },
+      "dependencies": [
+        "CdkPipelineStack.assets"
+      ],
+      "metadata": {
+        "/CdkPipelineStack/gitOwner.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitOwnerParameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.ts:328:9)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:17:41)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/gitRepo.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitRepoParameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.ts:328:9)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:21:40)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/gitBranch.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitBranchParameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.ts:328:9)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:25:42)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CdkBuild/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkBuildRoleBE66F777",
+            "trace": [
+              "new Role (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:801:31)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:29:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CdkBuild/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkBuildRoleDefaultPolicyD27F0F5C",
+            "trace": [
+              "new Policy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "PipelineProject.addToRolePolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:225:17)",
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:898:10)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:29:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CdkBuild/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkBuild455F642E",
+            "trace": [
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:854:22)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:29:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/LambdaBuild/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaBuildRole40E116C6",
+            "trace": [
+              "new Role (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:801:31)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:55:25)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/LambdaBuild/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaBuildRoleDefaultPolicyBE23D2E1",
+            "trace": [
+              "new Policy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "PipelineProject.addToRolePolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:225:17)",
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:898:10)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:55:25)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/LambdaBuild/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaBuildCF1FE7ED",
+            "trace": [
+              "new Project (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:854:22)",
+              "new PipelineProject (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:55:25)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/ArtifactsBucketEncryptionKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineArtifactsBucketEncryptionKey7F3C7C27",
+            "trace": [
+              "new Key (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-kms\\lib\\key.ts:427:22)",
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:257:25)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineArtifactsBucketEncryptionKeyAliasC588D4D1",
+            "trace": [
+              "new Alias (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-kms\\lib\\alias.ts:198:22)",
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:263:9)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineArtifactsBucket948DF7A6",
+            "trace": [
+              "new Bucket (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:1326:22)",
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:270:21)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineRoleC43C37A0",
+            "trace": [
+              "new Role (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:281:31)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineRoleDefaultPolicyA706989C",
+            "trace": [
+              "new Policy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Function.addToPrincipal (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.ts:168:61)",
+              "Function.addToPrincipalOrResource (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.ts:119:26)",
+              "Bucket.grant (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:726:27)",
+              "Bucket.grantReadWrite (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:650:17)",
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:297:25)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipeline9D7B1BB0",
+            "trace": [
+              "new Pipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:285:26)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:86:22)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/Source/GitHub/WebhookResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineSourceGitHubWebhookResource4E8373B2",
+            "trace": [
+              "GitHubSourceAction.bound (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\github\\source-action.ts:128:7)",
+              "GitHubSourceAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:90:34)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/SomeStage/Lambda_Build/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineSomeStageLambdaBuildCodePipelineActionRole8048A7D6",
+            "trace": [
+              "new Role (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "Pipeline.getRoleForAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:576:20)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:403:29)",
+              "Stage.attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:110:32)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/SomeStage/Lambda_Build/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineSomeStageLambdaBuildCodePipelineActionRoleDefaultPolicy4B629873",
+            "trace": [
+              "new Policy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "CodeBuildAction.bound (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\codebuild\\build-action.ts:156:18)",
+              "CodeBuildAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:110:32)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/SomeStage/CDK_Build/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineSomeStageCDKBuildCodePipelineActionRole2A0D5351",
+            "trace": [
+              "new Role (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "Pipeline.getRoleForAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:576:20)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:403:29)",
+              "Stage.attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:110:32)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/MyFirstPipeline/SomeStage/CDK_Build/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstPipelineSomeStageCDKBuildCodePipelineActionRoleDefaultPolicy1C365A2B",
+            "trace": [
+              "new Policy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "CodeBuildAction.bound (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\codebuild\\build-action.ts:156:18)",
+              "CodeBuildAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new AwsdevhourBackendPipelineStack (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\lib\\cdk_pipeline-stack.ts:110:32)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\bin\\cdk_pipeline.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:51:24)",
+              "C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:140:5",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "injectMetadataResources (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:131:3)",
+              "Object.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:60:27)",
+              "C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:140:5",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "injectMetadataResources (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:131:3)",
+              "Object.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.ts:549:17)",
+              "DefaultStackSynthesizer.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.ts:377:7)",
+              "C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:157:29",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "synthesizeTree (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:150:3)",
+              "Object.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:39:3)",
+              "App.synth (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/CdkPipelineStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.ts:559:3)",
+              "DefaultStackSynthesizer.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.ts:377:7)",
+              "C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:157:29",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "synthesizeTree (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:150:3)",
+              "Object.synthesize (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:39:3)",
+              "App.synth (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (C:\\Users\\amuham210\\Documents\\GitHub\\cdk_pipeline\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

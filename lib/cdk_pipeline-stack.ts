@@ -6,11 +6,17 @@ import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
 import { StringParameter } from '@aws-cdk/aws-ssm';
 import { ManualApprovalAction } from '@aws-cdk/aws-codepipeline-actions';
 import * as codebuild from '@aws-cdk/aws-codebuild';
+import * as lambda from '@aws-cdk/aws-lambda';
 
-export class AwsdevhourBackendPipelineStack extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+export interface PipelineStackProps extends StackProps {
+  readonly lambdaCode: lambda.CfnParametersCode;
+}
+
+export class PipelineStack extends Stack {
+  constructor(scope: Construct, id: string, props?: PipelineStackProps) {
     super(scope, id, props);
-  
+
+ 
     const sourceArtifact = new codepipeline.Artifact();
     const cloudAssemblyArtifact = new codepipeline.Artifact();
   
@@ -86,7 +92,7 @@ export class AwsdevhourBackendPipelineStack extends Stack {
     const pipeline = new codepipeline.Pipeline(this, 'MyFirstPipeline', {
       pipelineName: 'MyPipeline',
     });
-    
+
     const sourceStage = pipeline.addStage({
       stageName: 'Source',
       actions: [ // optional property
@@ -107,8 +113,8 @@ export class AwsdevhourBackendPipelineStack extends Stack {
       ],
     });
 
-    const someStage = pipeline.addStage({
-      stageName: 'SomeStage',
+    const buildStage = pipeline.addStage({
+      stageName: 'Build',
       actions: [ // optional property
         // see below...
         new codepipeline_actions.CodeBuildAction({
@@ -125,6 +131,25 @@ export class AwsdevhourBackendPipelineStack extends Stack {
         }),
       ],
     });
+
+    const deplyStage = pipeline.addStage({
+      stageName: 'Deploy',
+      actions: [
+        new codepipeline_actions.CloudFormationCreateUpdateStackAction({
+          actionName: 'Lambda_CFN_Deploy',
+          templatePath: cdkBuildOutput.atPath('LambdaStack.template.json'),
+          stackName: 'LambdaDeploymentStack',
+          adminPermissions: true,
+          parameterOverrides: {
+            ...props?.lambdaCode.assign(lambdaBuildOutput.s3Location)
+          },
+          extraInputs: [lambdaBuildOutput],
+        }),
+      ],
+    });
+
+    
+
     
 
   }

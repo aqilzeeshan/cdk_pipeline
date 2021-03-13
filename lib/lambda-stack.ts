@@ -7,9 +7,11 @@ export class LambdaStack extends Stack {
       
   constructor(app: App, id: string, props?: StackProps) {
     super(app, id, props);
+
+    this.lambdaCode = lambda.Code.fromCfnParameters();
       
     const func = new lambda.Function(this, 'Lambda', {
-      code: lambda.Code.fromAsset('./lambda'),
+      code: this.lambdaCode,
       handler: 'index.main',
       runtime: lambda.Runtime.NODEJS_10_X,
       description: `Function generated on: ${new Date().toISOString()}`,
