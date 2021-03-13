@@ -15,15 +15,15 @@ export class AwsdevhourBackendPipelineStack extends Stack {
     const cloudAssemblyArtifact = new codepipeline.Artifact();
   
     const githubOwner = StringParameter.fromStringParameterAttributes(this, 'gitOwner',{
-      parameterName: 'devhour-backend-git-owner'
+      parameterName: 'github-owner'
     }).stringValue;
   
     const githubRepo = StringParameter.fromStringParameterAttributes(this, 'gitRepo',{
-      parameterName: 'devhour-backend-git-repo'
+      parameterName: 'cdk-pipeline-git-repo'
     }).stringValue;
   
     const githubBranch = StringParameter.fromStringParameterAttributes(this, 'gitBranch',{
-      parameterName: 'devhour-backend-git-branch'
+      parameterName: 'cdk-pipeline-git-branch'
     }).stringValue;
     
     const pipeline = new codepipeline.Pipeline(this, 'MyFirstPipeline', {
