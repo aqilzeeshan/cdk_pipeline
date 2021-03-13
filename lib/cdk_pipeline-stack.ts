@@ -95,6 +95,7 @@ export class AwsdevhourBackendPipelineStack extends Stack {
           actionName: 'GitHub',
           output: sourceOutput,
           //As mentioned in trouble shooting tips, Pipeline: Internal Failure is due to not valid token
+          //Add Secret to Secret through UI (for some reason secret added through CLI doesnt work)
           //Check for valid token value by CLI
           //aws secretsmanager get-secret-value --secret-id NewFullAccessToken
           //https://docs.aws.amazon.com/cdk/latest/guide/cdk_pipeline.html
