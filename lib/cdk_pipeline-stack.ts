@@ -26,10 +26,6 @@ export class AwsdevhourBackendPipelineStack extends Stack {
       parameterName: 'cdk-pipeline-git-branch'
     }).stringValue;
     
-    const pipeline = new codepipeline.Pipeline(this, 'MyFirstPipeline', {
-      pipelineName: 'MyPipeline',
-    });
-
     const cdkBuild = new codebuild.PipelineProject(this, 'CdkBuild', {
       buildSpec: codebuild.BuildSpec.fromObject({
         version: '0.2',
@@ -87,6 +83,10 @@ export class AwsdevhourBackendPipelineStack extends Stack {
     const cdkBuildOutput = new codepipeline.Artifact('CdkBuildOutput');
     const lambdaBuildOutput = new codepipeline.Artifact('LambdaBuildOutput');
 
+    const pipeline = new codepipeline.Pipeline(this, 'MyFirstPipeline', {
+      pipelineName: 'MyPipeline',
+    });
+    
     const sourceStage = pipeline.addStage({
       stageName: 'Source',
       actions: [ // optional property
